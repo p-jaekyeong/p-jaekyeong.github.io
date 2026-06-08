@@ -16,8 +16,17 @@
     header {
       background: #222;
       color: white;
-      padding: 40px 20px;
+      padding: 48px 20px;
       text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 8px;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 4px 0;
     }
 
     nav {
@@ -27,13 +36,19 @@
       position: sticky;
       top: 0;
       border-bottom: 1px solid #ddd;
+      z-index: 10;
     }
 
     nav a {
-      margin: 0 10px;
+      display: inline-block;
+      margin: 6px 10px;
       color: #222;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     section {
@@ -42,6 +57,7 @@
       padding: 25px;
       background: white;
       border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .profile {
@@ -50,18 +66,39 @@
       object-fit: cover;
       border-radius: 50%;
       margin-top: 20px;
+      border: 4px solid white;
     }
 
     h2 {
       border-bottom: 2px solid #222;
       padding-bottom: 8px;
+      margin-top: 0;
     }
 
     .project {
       margin-bottom: 16px;
-      padding: 12px;
+      padding: 16px;
       background: #f0f0f0;
       border-radius: 8px;
+    }
+
+    .project h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      margin: 6px 0;
+    }
+
+    .tag {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #555;
+    }
+
+    a {
+      color: #0057b8;
     }
 
     footer {
@@ -69,12 +106,29 @@
       padding: 30px;
       color: #666;
     }
+
+    @media (max-width: 600px) {
+      section {
+        margin: 20px 12px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .profile {
+        width: 130px;
+        height: 130px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Park Jae Kyeong</h1>
     <p>Computer Science & Engineering Student</p>
+    <p>Seoul National University</p>
     <img src="assets/profile.jpg" alt="Profile photo of Park Jae Kyeong" class="profile" />
   </header>
 
@@ -91,7 +145,10 @@
     <h2>About Me</h2>
     <p>
       Hello, I am Park Jae Kyeong, a Computer Science & Engineering student at Seoul National University.
-      I am interested in software development, artificial intelligence, and problem solving.
+      I am interested in software development, artificial intelligence, object-oriented design, and problem solving.
+    </p>
+    <p>
+      I enjoy building systems that combine clear logic, structured design, and practical implementation.
     </p>
   </section>
 
@@ -99,46 +156,92 @@
     <h2>Projects & Activities</h2>
 
     <div class="project">
-      <h3>Course Project</h3>
-      <p>Worked on programming assignments and projects related to computer science courses.</p>
+      <h3>Railway System Simulation</h3>
+      <p class="tag">Python · Object-Oriented Programming · Simulation</p>
+      <p>
+        Designed and implemented an object-oriented railway system simulator with trains, track blocks,
+        junctions, signalers, and unloading resources.
+      </p>
+      <p>
+        Implemented tick-based simulation logic for train movement, signal updates, block occupancy,
+        collision prevention, passenger unloading, freight unloading, and structured logging.
+      </p>
     </div>
 
     <div class="project">
-      <h3>Personal Website</h3>
-      <p>Created and deployed this personal website using HTML, CSS, GitHub Pages, and an AI coding tool.</p>
+      <h3>Neuroevolution Snake Agent</h3>
+      <p class="tag">Python · Neural Network · Genetic Algorithm</p>
+      <p>
+        Implemented a Snake game simulation and trained an AI agent using a neural-network-based
+        genetic algorithm.
+      </p>
+      <p>
+        Built core neural-network operations including matrix multiplication, sigmoid activation,
+        softmax output, forward propagation, mutation, crossover, and fitness evaluation.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Auto-Grading System for Programming Assignments</h3>
+      <p class="tag">Java · File I/O · Collections · Error Handling</p>
+      <p>
+        Implemented an automated grading system that compiles, executes, and evaluates student submissions.
+      </p>
+      <p>
+        Used Java Collections and File I/O to manage students, problems, test cases, scoring results,
+        compilation errors, runtime errors, and output comparison.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Smart Library Service</h3>
+      <p class="tag">Java · OOP · Authentication · Request Processing</p>
+      <p>
+        Developed an object-oriented library management system supporting book borrowing, returns,
+        reservations, token-based authentication, and device-based request processing.
+      </p>
     </div>
   </section>
 
   <section id="cv">
     <h2>CV / Resume</h2>
     <p><strong>Education:</strong> Seoul National University, Computer Science & Engineering</p>
-    <p><strong>Skills:</strong> C++, Python, Java, HTML, CSS</p>
-    <p><strong>Experience:</strong> Course projects, programming practice, and personal web development</p>
+    <p><strong>Skills:</strong> Python, Java, C++, HTML, CSS, Git, GitHub, Object-Oriented Programming</p>
+    <p><strong>Interests:</strong> Software Engineering, Artificial Intelligence, Systems, Simulation</p>
     <p>
-      <a href="assets/cv.pdf" target="_blank">Download my CV</a>
+      <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">Download my CV</a>
     </p>
   </section>
 
-  <section id="courses">
-    <h2>Courses I Plan to Take</h2>
-    <ul>
-      <li>Data Structures</li>
-      <li>Algorithms</li>
-      <li>Computer Architecture</li>
-      <li>Artificial Intelligence</li>
-    </ul>
-  </section>
+<section id="courses">
+  <h2>Courses I Plan to Take</h2>
+  <ul>
+    <li>Algorithms</li>
+    <li>Computer Architecture</li>
+    <li>Artificial Intelligence</li>
+    <li>Operating Systems</li>
+  </ul>
+</section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: stickman2@snu.ac.kr</p>
-    <p>GitHub: <a href="https://github.com/p-jaekyeong" target="_blank">github.com/p-jaekyeong</a></p>
+    <p>Email: <a href="mailto:stickman2@snu.ac.kr">stickman2@snu.ac.kr</a></p>
+    <p>
+      GitHub:
+      <a href="https://github.com/p-jaekyeong" target="_blank" rel="noopener noreferrer">
+        github.com/p-jaekyeong
+      </a>
+    </p>
   </section>
 
   <section id="ai-usage">
     <h2>AI Usage</h2>
-    <p><strong>Tool:</strong> ChatGPT</p>
-    <p><strong>Prompt:</strong> Build a static personal website compatible with GitHub Pages.</p>
+    <p><strong>Tool:</strong> Codex</p>
+    <p>
+      <strong>Prompt:</strong>
+      Improve this static GitHub Pages personal website. Make the design cleaner and responsive,
+      and keep the required sections: About Me, Projects, CV, Courses, Contact, and AI Usage.
+    </p>
   </section>
 
   <footer>
